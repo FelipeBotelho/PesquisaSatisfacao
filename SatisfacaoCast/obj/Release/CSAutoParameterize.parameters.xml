@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Entities-Web.config Connection String" description="Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Edmx.csdl|res://*/Edmx.ssdl|res://*/Edmx.msl;provider=System.Data.SqlClient;provider connection string='data source=tcp:felipetestefelipe.database.windows.net,1433;initial catalog=&quot;Banco Teste&quot;;persist security info=False;user id=felipeteste;password=Teste@teste123456789;multipleactiveresultsets=False;connect timeout=30;encrypt=True;trustservercertificate=False;App=EntityFramework'" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\felipe\.botelho\\Documents\\SatisfacaoCast\\SatisfacaoCast\\SatisfacaoCast\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Entities']/@connectionString" />
+  </parameter>
+</parameters>

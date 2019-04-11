@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TIPOVOTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DESCRICAO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="VOTO" Relationship="Self.FK__VOTO__IdTipoVoto__4BAC3F29" FromRole="TIPOVOTO" ToRole="VOTO" />
+  </EntityType>
+  <EntityType Name="VOTO">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTipoVoto" Type="Int32" Nullable="false" />
+    <Property Name="Data_Voto" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TIPOVOTO" Relationship="Self.FK__VOTO__IdTipoVoto__4BAC3F29" FromRole="VOTO" ToRole="TIPOVOTO" />
+  </EntityType>
+  <Association Name="FK__VOTO__IdTipoVoto__4BAC3F29">
+    <End Role="TIPOVOTO" Type="Self.TIPOVOTO" Multiplicity="1" />
+    <End Role="VOTO" Type="Self.VOTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOVOTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VOTO">
+        <PropertyRef Name="IdTipoVoto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TIPOVOTO" EntityType="Self.TIPOVOTO" />
+    <EntitySet Name="VOTO" EntityType="Self.VOTO" />
+    <AssociationSet Name="FK__VOTO__IdTipoVoto__4BAC3F29" Association="Self.FK__VOTO__IdTipoVoto__4BAC3F29">
+      <End Role="TIPOVOTO" EntitySet="TIPOVOTO" />
+      <End Role="VOTO" EntitySet="VOTO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

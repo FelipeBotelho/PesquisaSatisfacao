@@ -1,0 +1,10 @@
+C:\Users\felipe.botelho\Documents\SatisfacaoCast\SatisfacaoCast\SatisfacaoCast.Repository\bin\Debug\SatisfacaoCast.Repository.dll.config
+C:\Users\felipe.botelho\Documents\SatisfacaoCast\SatisfacaoCast\SatisfacaoCast.Repository\bin\Debug\SatisfacaoCast.Repository.dll
+C:\Users\felipe.botelho\Documents\SatisfacaoCast\SatisfacaoCast\SatisfacaoCast.Repository\bin\Debug\SatisfacaoCast.Repository.pdb
+C:\Users\felipe.botelho\Documents\SatisfacaoCast\SatisfacaoCast\SatisfacaoCast.Repository\bin\Debug\EntityFramework.dll
+C:\Users\felipe.botelho\Documents\SatisfacaoCast\SatisfacaoCast\SatisfacaoCast.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\felipe.botelho\Documents\SatisfacaoCast\SatisfacaoCast\SatisfacaoCast.Repository\bin\Debug\EntityFramework.xml
+C:\Users\felipe.botelho\Documents\SatisfacaoCast\SatisfacaoCast\SatisfacaoCast.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\felipe.botelho\Documents\SatisfacaoCast\SatisfacaoCast\SatisfacaoCast.Repository\obj\Debug\SatisfacaoCast.Repository.csprojResolveAssemblyReference.cache
+C:\Users\felipe.botelho\Documents\SatisfacaoCast\SatisfacaoCast\SatisfacaoCast.Repository\obj\Debug\SatisfacaoCast.Repository.dll
+C:\Users\felipe.botelho\Documents\SatisfacaoCast\SatisfacaoCast\SatisfacaoCast.Repository\obj\Debug\SatisfacaoCast.Repository.pdb
