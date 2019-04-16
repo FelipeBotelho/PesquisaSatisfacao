@@ -8,29 +8,18 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body style="background: url('/Content/Imagens/gourmet-food-bg.png')">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                @Html.ActionLink("Pesquisa de Satisfação Cast", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-        </div>
-    </div>
     <div class="container body-content">
         @RenderBody()
     </div>
-    <div class="hidden-sm hidden-md hidden-xs" style="position:absolute;bottom:0">
-        <img src="~/Content/Imagens/cody.png" />
-    </div>
-    <div class="hidden-lg hidden-sm hidden-xs" style="position:absolute;bottom:0">
-        <img style="width:65%" src="~/Content/Imagens/cody.png" />
-    </div>
+    <div class="" style="position:absolute;bottom:0">
+        <img style="width:70%" src="~/Content/Imagens/cody.png" />
+    </div>  
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/site")
 
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="~/Scripts/sweetalert2.all.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -37,20 +37,18 @@ namespace SatisfacaoCast.Controllers
         }
 
        [HttpGet]
-       public IEnumerable<Voto> ObterResultados(DateTime? filtro)
+       public IEnumerable<dynamic> ObterResultados(DateTime? filtro)
         {
             var lista = new List<Voto>();
             var results = this._votorepo.ObterResultadosVoto(filtro);
-            foreach (var item in results)
-            {
-                var v = new Voto() {
-                    Id = item.Id,
-                    Data = item.Data_Voto ?.Date,
-                    NomeTipoVoto = item.TIPOVOTO.DESCRICAO
-                };
-                lista.Add(v);
-            }
-            return lista;
+            return results;
+        }
+
+        [HttpGet]
+        public int ObterContagemDeVotos()
+        {
+            var results = this._votorepo.ObterContagem();          
+            return results;
         }
 
         // DELETE api/<controller>/5

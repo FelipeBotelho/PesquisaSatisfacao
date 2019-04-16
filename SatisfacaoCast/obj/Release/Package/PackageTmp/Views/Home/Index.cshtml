@@ -8,21 +8,26 @@
 @using (Html.BeginForm("Votar", "Home", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data", id = "form-cadastro-empreendimento" }))
 {
     <div class="row" style="text-align:center; padding-top:15%">
-        <div onclick="ComputarVoto(1)" class="col col-lg-2  col-md-2 col-sm-2 col-xs-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+        <div class="hidden-lg hidden-md hidden-sm col-xs-1"></div>
+        <div title="Muito Insatisfeito" onclick="ComputarVoto(1)" class="col col-lg-2  col-md-2 col-sm-2 col-xs-2  col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
             <img style="width:100%" src="~/Content/Imagens/MuitoInsatisfeito.png" />
         </div>
-        <div onclick="ComputarVoto(2)" class="col col-lg-2 col col-lg-2  col-md-2 col-sm-2 col-xs-2">
+        
+        <div title="Insatisfeito" onclick="ComputarVoto(2)" class="col col-lg-2 col col-lg-2  col-md-2 col-sm-2 col-xs-2">
             <img  style="width:100%" src="~/Content/Imagens/Insatisfeito.png" />
         </div>
-        <div onclick="ComputarVoto(3)" class="col col-lg-2  col-md-2 col-sm-2 col-xs-2">
+
+        <div title="Neutra" onclick="ComputarVoto(3)" class="col col-lg-2  col-md-2 col-sm-2 col-xs-2">
             <img  style="width:100%" src="~/Content/Imagens/Neutro.png" />
         </div>
-        <div onclick="ComputarVoto(4)" class="col col-lg-2  col-md-2 col-sm-2 col-xs-2">
+        
+        <div title="Satisfeito" onclick="ComputarVoto(4)" class="col col-lg-2  col-md-2 col-sm-2 col-xs-2">
             <img  style="width:100%" src="~/Content/Imagens/Satisfeito.png" />
         </div>
-        <div onclick="ComputarVoto(5)" class="col col-lg-2  col-md-2 col-sm-2 col-xs-2">
+        <div title="Muito Satisfeito" onclick="ComputarVoto(5)" class="col col-lg-2  col-md-2 col-sm-2 col-xs-2">
             <img  style="width:100%" src="~/Content/Imagens/MuitoSatisfeito.png" />
         </div>
+        <div class="col-xs-3 hidden-lg hidden-md hidden-print"></div>
     </div>
     @Html.HiddenFor(x => x.IdTipoVoto)   
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SatisfacaoCast.Repository.Contratos;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace SatisfacaoCast.Repository
@@ -28,11 +30,31 @@ namespace SatisfacaoCast.Repository
             }
         }
 
-        public IEnumerable<VOTO> ObterResultadosVoto(DateTime? filtro)
+        public IEnumerable<dynamic> ObterResultadosVoto(DateTime? filtro)
         {
             using (var db = new Entities())
             {
-                return filtro == null ? db.VOTO.Include("TIPOVOTO").ToList() : db.VOTO.Include("TIPOVOTO").Where(x => x.Data_Voto == filtro).ToList();
+                var votos = db.VOTO.Include("TIPOVOTO").Where(x => DbFunctions.TruncateTime(x.Data_Voto) == DbFunctions.TruncateTime(filtro) || filtro == null).GroupBy(x => DbFunctions.TruncateTime(x.Data_Voto)).Select(x => new
+                {
+                    QuantidadeTotal = x.Count(),
+                    QuantidadeMuitoInsatisfeito = x.Count(y=>y.IdTipoVoto == (int)EnumTipoVoto.MuitoInsatisfeito),
+                    QuantidadeInsatisfeito = x.Count(y => y.IdTipoVoto == (int)EnumTipoVoto.Instatisfeito),
+                    QuantidadeNeutro = x.Count(y => y.IdTipoVoto == (int)EnumTipoVoto.Neutro),
+                    QuantidadeSatisfeito = x.Count(y => y.IdTipoVoto == (int)EnumTipoVoto.Satisfeito),
+                    QuantidadeMuitoSatisfeito = x.Count(y => y.IdTipoVoto == (int)EnumTipoVoto.MuitoSatisfeito),
+                    Day = (DateTime)x.Key
+                }).ToList();
+
+
+                return votos;
+            }
+        }
+
+        public int ObterContagem()
+        {
+            using (var db = new Entities())
+            {
+                return db.VOTO.Count();
             }
         }
     }
